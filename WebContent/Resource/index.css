@@ -1,0 +1,69 @@
+body{
+	margin:0;
+	padding: 0;
+}
+
+.time_description{
+	width:320px;
+	height:129px;
+	border: 1px solid #ccc;
+}
+
+.center{
+	margin:auto;
+	width:850px;
+	display:block;
+	padding:0;
+	border: 1px solid #ccc;
+}
+
+.empty_box{
+	height:135px;
+}
+
+.right{
+	width:500px;
+	border: 1px solid #ccc;
+	padding:2px;
+	float:right;
+}
+.left{
+	width:340px;
+	border: 1px solid #ccc;
+	float:left;
+}
+.timenodebox{
+	display:block;
+	padding:2px;
+	width:330px;
+	
+}
+
+#new_Event{
+	width:500px;
+	border: 1px solid #ccc;
+}
+
+.event_description{
+	width:490px;
+	border: 1px solid #ccc;
+}
+#header{
+	font-size: 35px;
+	text-align: center;
+}
+
+#event_lists{
+	padding:1px;
+}
+
+.event_description{
+	margin:2px;
+}
+
+#footer{
+	text-align:center;
+	border-top: 1px solid #ccc;
+	margin-bottom:10px;
+	margin-top:10px;
+}
