@@ -103,7 +103,7 @@ public class TimeNodeFactory implements Isqltool {
 		conn = new SQLconnect().getConnection();
 		ArrayList<Object> tns = new ArrayList<Object>();
 		try {
-			String sql = "select * from Timenodes where display = 'true' and time_owner = "
+			String sql = "select * from timenodes where display = 'true' and time_owner = "
 					+ id;
 			Statement st = (Statement) conn.createStatement(); // 创建用于执行静态sql语句的Statement对象
 			ResultSet rs = st.executeQuery(sql); // 执行查询操作的sql语句，并返回插入数据的个数
@@ -135,7 +135,7 @@ public class TimeNodeFactory implements Isqltool {
 		conn = new SQLconnect().getConnection();
 		Timenode node = new Timenode();
 		try {
-			String sql = "select * from Timenodes where display = 'true' and id = "
+			String sql = "select * from timenodes where display = 'true' and id = "
 					+ id;
 			Statement st = (Statement) conn.createStatement(); // 创建用于执行静态sql语句的Statement对象
 			ResultSet rs = st.executeQuery(sql); // 执行查询操作的sql语句，并返回插入数据的个数

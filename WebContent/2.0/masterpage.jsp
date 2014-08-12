@@ -23,6 +23,7 @@
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li><a href="index.jsp">首页</a></li>
+					<li><a href="imagewaterfall.jsp">兄弟眼</a></li>
 					<li><a href="#about">关于</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">

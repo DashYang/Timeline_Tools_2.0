@@ -19,7 +19,7 @@ public class EventNodeFactory implements Isqltool{
 	@Override
 	public boolean add(int prenodeid,Object item) {
 		conn = new SQLconnect().getConnection();
-		String sqlcommand = "INSERT INTO `Eventnodes` (`owner`, `description`, `display`) VALUES ('%s', '%s', '%s');";
+		String sqlcommand = "INSERT INTO `eventnodes` (`owner`, `description`, `display`) VALUES ('%s', '%s', '%s');";
 		if(item instanceof Eventnode)
 		{
 			Eventnode newitem = new Eventnode();
@@ -45,7 +45,7 @@ public class EventNodeFactory implements Isqltool{
 	@Override
 	public boolean update(Object item) {
 		conn = new SQLconnect().getConnection();
-		String sqlcommand = "UPDATE `Eventnodes` SET `description`='%s' WHERE `owner`='%s';";
+		String sqlcommand = "UPDATE `eventnodes` SET `description`='%s' WHERE `owner`='%s';";
 		if(item instanceof Eventnode)
 		{
 			Eventnode newitem = new Eventnode();
@@ -70,7 +70,7 @@ public class EventNodeFactory implements Isqltool{
 
 	public boolean delete(Object item) {
 		conn = new SQLconnect().getConnection();
-		String sqlcommand = "UPDATE `Timeline_Database`.`Eventnodes` SET `display`='false' WHERE `id`='%s';";
+		String sqlcommand = "UPDATE `eventnodes` SET `display`='false' WHERE `id`='%s';";
 		if(item instanceof Eventnode)
 		{
 			Eventnode newitem = new Eventnode();
@@ -96,7 +96,7 @@ public class EventNodeFactory implements Isqltool{
 		conn = new SQLconnect().getConnection();
 		ArrayList<Object> tns = new ArrayList<Object>();
 		try {
-			String sql = "select * from Eventnodes where display = 'true' and owner = "+ id + ";";
+			String sql = "select * from eventnodes where display = 'true' and owner = "+ id + ";";
 			Statement st = (Statement) conn.createStatement();    // 创建用于执行静态sql语句的Statement对象  
 			ResultSet rs = st.executeQuery(sql);  // 执行查询操作的sql语句，并返回插入数据的个数  
 			while (rs.next())
