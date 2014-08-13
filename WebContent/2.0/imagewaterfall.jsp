@@ -1,3 +1,7 @@
+<%@page import="DataBase.Isqltool"%>
+<%@page import="DataBase.ImageFactory"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="storage.Imagenode"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -15,26 +19,19 @@
 	<%@ include file="masterpage.jsp"%>
 	<div class="container">
 		<div id="masonry" class="container-fluid">
-			<div class="box">
-				<img
-					src="http://imgsrc.baidu.com/forum/w%3D580/sign=7dcafe4d92ef76c6d0d2fb23ad16fdf6/be5783b1cb1349549134c408544e9258d1094a38.jpg">
-			</div>
-			<div class="box">
-				<img
-					src="http://imgsrc.baidu.com/forum/w%3D580/sign=7dcafe4d92ef76c6d0d2fb23ad16fdf6/be5783b1cb1349549134c408544e9258d1094a38.jpg">
-			</div>
-			<div class="box">
-				<img
-					src="http://imgsrc.baidu.com/forum/w%3D580/sign=7dcafe4d92ef76c6d0d2fb23ad16fdf6/be5783b1cb1349549134c408544e9258d1094a38.jpg">
-			</div>
-			<div class="box">
-				<img
-					src="http://imgsrc.baidu.com/forum/w%3D580/sign=7dcafe4d92ef76c6d0d2fb23ad16fdf6/be5783b1cb1349549134c408544e9258d1094a38.jpg">
-			</div>
-			<div class="box">
-				<img
-					src="http://imgsrc.baidu.com/forum/w%3D580/sign=7dcafe4d92ef76c6d0d2fb23ad16fdf6/be5783b1cb1349549134c408544e9258d1094a38.jpg">
-			</div>
+			<%
+				Isqltool tool = new ImageFactory();
+				ArrayList<Object> result = tool.show(0);
+				String template = "<div class='box'><img src='imageproxy.jsp?url=%s' title='%s'></div>";
+				for (Object o : result) {
+					if (o instanceof Imagenode) {
+						Imagenode in = (Imagenode) o;
+						String imagediv = String.format(template, in.getUrl() ,
+								in.getContent() + "...");
+						out.println(imagediv);
+					}
+				}
+			%>
 		</div>
 	</div>
 </body>

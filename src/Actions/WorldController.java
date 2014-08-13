@@ -33,5 +33,4 @@ public class WorldController implements IprocessHttpRequest {
 		new WorldNodeFactory().add(0, node);
 		return false;
 	}
-
 }
