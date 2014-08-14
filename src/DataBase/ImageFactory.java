@@ -36,8 +36,8 @@ public class ImageFactory implements Isqltool {
 		conn = SQLconnect.getConnection();
 		ArrayList<Object> tns = new ArrayList<Object>();
 		try {
-			String sql = "SELECT * FROM hero_image limit %d,%d";
-			sql = String.format(sql, id , id +20);
+			String sql = "SELECT * FROM hero_image order by(id) desc limit %d,%d";
+			sql = String.format(sql, id , id +30);
 			Statement st = (Statement) conn.createStatement();    // 创建用于执行静态sql语句的Statement对象  
 			ResultSet rs = st.executeQuery(sql);  // 执行查询操作的sql语句，并返回插入数据的个数  
 			while (rs.next())
