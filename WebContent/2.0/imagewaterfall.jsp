@@ -27,11 +27,11 @@
 			<%
 				Isqltool tool = new ImageFactory();
 				ArrayList<Object> result = tool.show(0);
-				String template = "<div class='box'><a href='%s'><img src='imageproxy.jsp?url=%s' title='%s'></a></div>";
+				String template = "<div class='box'><a href='%s'><div class='bg-primary'>%s</div></a></div>";
 				for (Object o : result) {
 					if (o instanceof Imagenode) {
 						Imagenode in = (Imagenode) o;
-						String imagediv = String.format(template , in.getSource() , in.getUrl() ,
+						String imagediv = String.format(template , in.getUrl() , in.getContent() ,
 								in.getContent() + "..." );
 						out.println(imagediv);
 					}

@@ -4,13 +4,13 @@
 
 <%
 	
-response.setHeader("Pragma", "No-cache");
+	response.setHeader("Pragma", "No-cache");
 	response.setHeader("Cache-Control", "no-cache");
 	response.setDateHeader("Expires", 0);
 	
 	
 	String url = request.getParameter("url");
-	InputStream is = Downloadtool.downloadImage(url);
+	InputStream is = Downloadtool.getImage(url);
 	ServletOutputStream sout = response.getOutputStream();
 
 	byte b[] = new byte[1024];
